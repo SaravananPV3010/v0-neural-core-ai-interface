@@ -219,21 +219,20 @@ export function NeuralCore() {
   
   return (
     <div className="h-screen flex flex-col bg-background relative overflow-hidden">
-      {/* Noise overlay */}
-      <div className="noise-overlay" aria-hidden="true" />
+      {/* Grid background */}
+      <div className="grid-background" aria-hidden="true" />
       
+      {/* Content wrapper with relative positioning */}
+      <div className="relative z-10 h-screen flex flex-col">
       {/* Header */}
       <header className="flex items-center justify-between px-6 md:px-16 lg:px-24 py-4 border-b border-border">
-        <div className="flex items-center gap-3">
-          <span className="font-mono text-[11px] tracking-[0.2em] text-foreground uppercase">
-            Neural_Core
+        <div className="flex items-center gap-4">
+          <span className="font-mono text-[9px] tracking-[0.15em] text-primary uppercase">
+            01 / Chat
           </span>
-          <span className="font-mono text-[9px] text-muted-foreground/50">
-            //
-          </span>
-          <span className="font-mono text-[9px] text-muted-foreground/50 uppercase truncate max-w-[200px]">
-            {activeConversation ? activeConversation.title : "New Conversation"}
-          </span>
+          <h1 className="text-2xl font-bold text-foreground">
+            parallax.ai
+          </h1>
         </div>
         
         <div className="flex items-center gap-2">
@@ -261,7 +260,7 @@ export function NeuralCore() {
               History
             </span>
             {conversations.length > 0 && (
-              <span className="ml-1 px-1.5 py-0.5 bg-violet-500/20 text-violet-400 font-mono text-[9px]">
+              <span className="ml-1 px-1.5 py-0.5 bg-primary/20 text-primary font-mono text-[9px]">
                 {conversations.length}
               </span>
             )}
@@ -293,6 +292,7 @@ export function NeuralCore() {
         onSelectConversation={handleSelectConversation}
         onNewConversation={handleNewConversation}
       />
+      </div>
     </div>
   )
 }

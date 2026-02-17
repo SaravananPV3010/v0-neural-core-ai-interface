@@ -14,8 +14,8 @@ const _cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: 'Neural Core',
-  description: 'A sentient AI interface with surgical precision',
+  title: 'parallax.ai',
+  description: 'Human-Preference Evaluation for LLMs',
   generator: 'v0.app',
   icons: {
     icon: [
