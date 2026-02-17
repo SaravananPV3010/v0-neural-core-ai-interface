@@ -15,13 +15,13 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("dark")
+  const [theme, setThemeState] = useState<Theme>("light")
   const [mounted, setMounted] = useState(false)
 
   // On mount, read from localStorage and apply
   useEffect(() => {
-    const stored = localStorage.getItem("neural-core-theme") as Theme | null
-    const initialTheme = stored || "dark"
+    const stored = localStorage.getItem("parallax-ai-theme") as Theme | null
+    const initialTheme = stored || "light"
     setThemeState(initialTheme)
     document.documentElement.classList.remove("light", "dark")
     document.documentElement.classList.add(initialTheme)
@@ -33,7 +33,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setThemeState(newTheme)
     document.documentElement.classList.remove("light", "dark")
     document.documentElement.classList.add(newTheme)
-    localStorage.setItem("neural-core-theme", newTheme)
+    localStorage.setItem("parallax-ai-theme", newTheme)
   }
 
   const toggleTheme = () => {

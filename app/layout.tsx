@@ -49,10 +49,10 @@ export default function RootLayout({
             __html: `
               (function() {
                 try {
-                  var theme = localStorage.getItem('neural-core-theme') || 'dark';
+                  var theme = localStorage.getItem('parallax-ai-theme') || 'light';
                   document.documentElement.classList.add(theme);
                 } catch (e) {
-                  document.documentElement.classList.add('dark');
+                  document.documentElement.classList.add('light');
                 }
               })();
             `,
