@@ -1,6 +1,6 @@
 "use client"
 
-import { SentientSphere } from "./sentient-sphere"
+import { PlasmaField } from "./plasma-field"
 
 interface NeuralMonitorProps {
   isThinking?: boolean
@@ -9,9 +9,9 @@ interface NeuralMonitorProps {
 export function NeuralMonitor({ isThinking = false }: NeuralMonitorProps) {
   return (
     <div className="flex flex-col items-center gap-4 py-8">
-      {/* Sentient Sphere */}
+      {/* Plasma Field Visualization */}
       <div className="relative w-48 h-48">
-        <SentientSphere />
+        <PlasmaField />
       </div>
       
       {/* Status text */}
