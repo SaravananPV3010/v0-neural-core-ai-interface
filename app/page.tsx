@@ -1,43 +1,21 @@
 "use client"
 
-import { useState } from "react"
-import { NeuralCore } from "@/components/chat/neural-core"
-import { ElementGallery } from "@/components/chat/element-gallery"
-import { Palette } from "lucide-react"
+import { PlasmaField } from "@/components/chat/plasma-field"
 
 export default function Home() {
-  const [showGallery, setShowGallery] = useState(false)
-
   return (
-    <div className="relative">
-      {/* Gallery toggle button */}
-      {!showGallery && (
-        <button
-          onClick={() => setShowGallery(true)}
-          className="fixed top-6 right-6 z-50 flex items-center gap-2 px-4 py-2 rounded-lg bg-foreground/10 hover:bg-foreground/20 text-foreground transition-colors magnetic-hover"
-          aria-label="Open element gallery"
-        >
-          <Palette className="w-4 h-4" />
-          <span className="font-mono text-[10px] tracking-wider uppercase hidden sm:inline">
-            Gallery
-          </span>
-        </button>
-      )}
-
-      {showGallery ? (
-        <div className="relative">
-          <ElementGallery />
-          <button
-            onClick={() => setShowGallery(false)}
-            className="fixed top-6 left-6 z-50 px-4 py-2 rounded-lg bg-foreground/10 hover:bg-foreground/20 text-foreground transition-colors font-mono text-[10px] tracking-wider uppercase"
-            aria-label="Close gallery"
-          >
-            ← Back to Chat
-          </button>
+    <div className="w-screen h-screen overflow-hidden">
+      <PlasmaField />
+      
+      {/* Info overlay */}
+      <div className="fixed inset-0 pointer-events-none flex flex-col items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 mb-2">
+            Plasma Field
+          </h1>
+          <p className="text-cyan-300/70 font-mono text-sm">Move your cursor to influence the particles</p>
         </div>
-      ) : (
-        <NeuralCore />
-      )}
+      </div>
     </div>
   )
 }
